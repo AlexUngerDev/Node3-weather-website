@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "version": "echo %npm_package_version%"
+    "version": "echo $npm_package_version"
   },
   "author": "",
   "license": "ISC",
