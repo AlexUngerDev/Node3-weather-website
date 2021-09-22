@@ -21,7 +21,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ww-entrypoint
-  namespace: default
+  namespace: weather
 spec:
   type: NodePort
   selector:
