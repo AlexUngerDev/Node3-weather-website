@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_HOST = '172.17.0.1'
-       VERSION=sh(returnStdout: true, script: '''grep 'version' package.json | cut -d '"' -f4 | head -n 1''')
+        VERSION=sh(returnStdout: true, script: '''grep 'version' package.json | cut -d '"' -f4 | head -n 1''')
     }
     stages {
         stage('clone') {
