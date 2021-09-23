@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: weather-website
-        image: alexunger/weatherwebsite:1.0.9
+        image: alexunger/weatherwebsite:1.0.10

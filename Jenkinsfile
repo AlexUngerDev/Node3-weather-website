@@ -23,6 +23,12 @@ pipeline {
                     sh 'docker push alexunger/weatherwebsite:$VERSION'
                 }
             } 
-        } 
+        }
+        stage('create deployment and service') {
+            steps {
+                sh 'kubectl apply -f deploy/weather-deployment.yaml'
+                sh 'kubectl apply -f deploy/weather-service.yaml'
+            } 
+        }  
     }
 }
