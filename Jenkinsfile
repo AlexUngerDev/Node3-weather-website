@@ -26,8 +26,11 @@ pipeline {
         }
         stage('create deployment and service') {
             steps {
-                sh 'kubectl apply -f deploy/weather-deployment.yaml'
-                sh 'kubectl apply -f deploy/weather-service.yaml'
+                withKubeConfig([credentialsId: 'k3s-config']) {
+                    sh 'kubectl apply -f deploy/weather-deployment.yaml'
+                    sh 'kubectl apply -f deploy/weather-service.yaml'
+                }
+                
             } 
         }  
     }
