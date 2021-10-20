@@ -27,6 +27,7 @@ pipeline {
         stage('create deployment and service') {
             steps {
                 withKubeConfig([credentialsId: 'k3s-config']) {
+                    sh 'kubectl create namespace weather || true'
                     sh 'kubectl apply -f deploy/weather-deployment.yaml'
                     sh 'kubectl apply -f deploy/weather-service.yaml'
                 }
